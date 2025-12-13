@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All products</h1>
+
+    {% if products %}
+        {% for product in products %}
+            {% if product.image %}
+                <img src="{{product.image.url}}" alt="" height='100'>
+            {% endif %}
+            <h4>{{product.name}}</h4>
+            <p>{{product.quantity}} left</p>
+            <code>#{{product.price}}</code>
+            <a href="{% url "get-product" product.id %}"><button>view</button></a>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No product available</p>
+    {% endif %}
+
+</body>
+</html>

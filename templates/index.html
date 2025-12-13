@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+    <img src="{% static "images/wall1.jpg" %}" alt="" height="200">
+    <h3>Welcome back {{ name }}</h3>
+    {% if 'Admin' in roles  %}
+        <b class="box">Admin</b>
+    {% else %}
+        <b>Customer</b>
+    {% endif %}
+    <ul>
+        {% for role in roles %}
+          <li>{{ role }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

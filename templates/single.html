@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        {% if product.image %}
+            <img src="{{product.image.url}}" alt="" height='300'>
+        {% endif %}
+        <h4>{{product.name}}</h4>
+        <p>{{product.quantity}} left</p>
+        <code>#{{product.price}}</code>
+        <a href="{% url "edit-product" product.id %}"><button>edit</button></a>
+        <a href="{% url "delete-product" product.id %}"><button>delete</button></a>
+        <hr>
+</body>
+</html>
