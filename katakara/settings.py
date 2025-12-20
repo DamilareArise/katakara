@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "userApp",
-    "productApp"
+    "productApp",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,8 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 WSGI_APPLICATION = "katakara.wsgi.application"
 
@@ -141,3 +145,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
+
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '4ef4b514d33fdd'
+EMAIL_HOST_PASSWORD = 'bba302e1fa5c69'
+EMAIL_PORT = '2525'
