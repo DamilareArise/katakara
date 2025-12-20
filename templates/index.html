@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+{% extends "common.html" %}
+    {% block content %}
     {% load static %}
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-</head>
-<body>
 
     <img src="{% static "images/wall1.jpg" %}" alt="" height="200">
     <h3>Welcome back {{ name }}</h3>
@@ -22,5 +15,4 @@
         {% endfor %}
     </ul>
 
-</body>
-</html>
+    {% endblock content %}
